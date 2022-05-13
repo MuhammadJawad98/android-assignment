@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyCurrentTravelActivity"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+
+    <TextView
+        android:id="@+id/tvLat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Latitude"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvLng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Longitude"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLat" />
+
+    <EditText
+        android:id="@+id/edtStreetAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Street Address"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvLng"
+        tools:layout_editor_absoluteX="0dp" />
+
+<!--        <View-->
+<!--        android:id="@+id/fragment"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="200dp"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:background="@color/black"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/edtStreetAddress"-->
+<!--        tools:layout_editor_absoluteX="0dp" />-->
+
+    <fragment
+        class="com.google.android.gms.maps.SupportStreetViewPanoramaFragment"
+        android:id="@+id/streetviewpanorama"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/edtStreetAddress"
+        tools:layout_editor_absoluteX="0dp"
+         />
+
+    <Button
+        android:id="@+id/btnCurrentLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Show Current location"
+        android:onClick="getLocationAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/streetviewpanorama" />
+
+    <EditText
+        android:id="@+id/edtNoteId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Add a note about this location"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnCurrentLocation"
+        tools:layout_editor_absoluteX="90dp" />
+
+    <Button
+        android:id="@+id/btnUpdateLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Add/update this location"
+        app:layout_constraintTop_toBottomOf="@+id/edtNoteId"
+        tools:layout_editor_absoluteX="142dp" />
+
+    <Button
+        android:id="@+id/btnDeleteLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="delete this location"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpdateLocation"
+        tools:layout_editor_absoluteX="158dp" />
+
+    <Button
+        android:id="@+id/btnViewTravel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="View my travel on map"
+        app:layout_constraintTop_toBottomOf="@+id/btnDeleteLocation"
+        tools:layout_editor_absoluteX="158dp" />
+
+    <Button
+        android:id="@+id/btnTravelList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View my travel on list"
+        app:layout_constraintTop_toBottomOf="@+id/btnViewTravel"
+        tools:layout_editor_absoluteX="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
